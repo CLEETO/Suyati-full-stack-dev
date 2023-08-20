@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+        <link href="/static/buypage.css" rel="stylesheet" />
+        <title>Document</title>
+    </head>
+    <style>
+      body {
+        background: rgba(43,103,119,1);
+      }
+        a {
+            text-decoration: none;
+          }
+          
+          input {
+            border: none;
+            outline: none;
+          }
+          
+          .input-wrapper {
+            position: relative;
+          }
+          
+          .input-wrapper input:focus::placeholder {
+            opacity: 0;
+          }
+          
+          .input-wrapper input::placeholder {
+            opacity: 1;
+            transition: opacity 0.2s ease;
+          }
+          select {
+  border: none; color: lightgrey;
+}
+        </style>
+        <script>
+          function submitForm() {
+            var form = document.getElementById('search');
+            form.submit();
+          }
+        </script>
+    <body>
+        <div class="v1_155">
+            <a href="/home1" class="v1_156">HOMELY</a>
+            <div class="v1_157"></div>
+            <a href="javascript:void(0)" onclick="submitForm()" class="v1_173"></a>
+
+            <div class="v1_170">
+    <form id="search" method="POST" action="/buypage/">
+      {% csrf_token %}
+                <div class="v1_171"></div>
+                <input class="v1_172" placeholder="Location"   name="location">
+                <!--<span class="v1_172">Location</span>
+    <select class="v1_172" name="location">
+      <option value="" disabled selected>Location</option>
+      <option value="Austin"{% if association == "Austin" %} selected{% endif %}>Austin</option>
+      <option value="Del Valle"{% if association == "Del Valle" %} selected{% endif %}>Del Valle</option>
+      <option value="Pflugerville"{% if association == "Pflugerville" %} selected{% endif %}>Pflugerville</option>
+      <option value="Driftwood"{% if association == "Driftwood" %} selected{% endif %}>Driftwood</option>
+      <option value="Manor"{% if association == "Manor" %} selected{% endif %}>Manor</option>
+      <option value="Dripping Springs"{% if association == "Dripping Springs" %} selected{% endif %}>Dripping Springs</option>
+      <option value="Manchaca"{% if association == "Manchaca" %} selected{% endif %}>Manchaca</option>
+      <option value="West Lake Hills"{% if association == "West Lake Hills" %} selected{% endif %}>West Lake Hills</option>
+      <option value="Road"{% if association == "Road" %} selected{% endif %}>Road</option>
+    </select>-->
+    
+            </div>
+            <div class="v1_174">
+                <div class="v1_175"></div>
+                <span class="v1_176">Price</span>
+                <select class="v1_176" name="price">
+                  <option value="" disabled selected>Price</option>
+                  <option value="0"{% if association == "Low to High" %} selected{% endif %}>Low to High</option>
+                  <option value="1"{% if association == "High to Low" %} selected{% endif %}>High to Low</option>
+                </select>            </div>
+            <div class="v1_177">
+                <div class="v1_178"></div>
+                <span class="v1_179">Price</span>
+                <select class="v1_179" name="area">
+                  <option value="" disabled selected>Area</option>
+                  <option value="0"{% if association == "Low to High" %} selected{% endif %}>Low to High</option>
+                  <option value="1"{% if association == "High to Low" %} selected{% endif %}>High to Low</option>
+                </select> 
+            </div>
+            <button type="submit" style="display: none;"></button>
+  </form>
+            <!-- 
+<div class="v1_180">
+    <div class="v1_181"></div>
+    <span class="v1_182">More</span>
+</div>
+-->
+
+            {% if authenticated %}
+            <a href="/info" class="v48_28"></a>
+            {% endif %}
+            </div>
+            {% for property in data %}
+            <style>
+              .v124_78-{{ forloop.counter }}{
+  width: 262px;
+  height: 350px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  margin-right: 50px;
+  margin-bottom: 40px;
+  display: inline-block;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+  border-top-left-radius: 39px;
+  border-top-right-radius: 39px;
+  border-bottom-left-radius: 39px;
+  border-bottom-right-radius: 39px;
+  top: 282px;
+  left: 117px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.v124_78-{{ forloop.counter }}:hover {
+  transform: scale(1.05);
+}
+.v124_79-{{ forloop.counter }} {
+  width: 260px;
+  height: 350px;
+  background: rgba(242,242,242,1);
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 1px;
+  border-top-left-radius: 39px;
+  border-top-right-radius: 39px;
+  border-bottom-left-radius: 39px;
+  border-bottom-right-radius: 39px;
+  overflow: hidden;
+}
+.v124_80-{{ forloop.counter }} {
+  width: 262px;
+  height: 220px;
+  background: url('{{property.image}}') no-repeat center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  border-top-left-radius: 39px;
+  border-top-right-radius: 39px; 
+}
+
+
+.v124_81-{{ forloop.counter }} {
+  width: 208px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 250px;
+  left: 27px;
+  font-family: Inter;
+  font-weight: Medium;
+  font-size: 28px;
+  opacity: 1;
+  text-align: center;
+}
+.v124_82-{{ forloop.counter }} {
+  width: 208px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 300px;
+  left: 27px;
+  font-family: Inter;
+  font-weight: Regular;
+  font-size: 20px;
+  opacity: 1;
+  text-align: center;
+}
+</style>
+            <div class="v124_78-{{ forloop.counter }}">
+                <a href="/property/?id={{property.id}}" class="v124_79-{{ forloop.counter }}"></a>
+                <div class="v124_80-{{ forloop.counter }}"></div>
+                <a href="/property/?id={{property.id}}" class="v124_81-{{ forloop.counter }}">{{property.property_name}}</a>
+                <a href="/property/?id={{property.id}}" class="v124_82-{{ forloop.counter }}">${{property.price}}</a>
+            </div>
+            {% endfor %}
+        </div>
+    </body>
+    </html>
