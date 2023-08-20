@@ -1,0 +1,8 @@
+db.sqlite3
+*.log
+__pycache__
+*.pyc
+.env
+.env.*
+/myapp/static/images/
+/myapp/SavedModels/

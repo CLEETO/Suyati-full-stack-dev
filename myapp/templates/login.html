@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<script>
+  function submitLoginForm() {
+    document.getElementById("loginForm").submit();
+  }
+</script>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+  <link href="/static/login.css" rel="stylesheet" />
+  <style>
+    body {
+        background: rgba(43,103,119,1);
+      }
+    a {
+      text-decoration: none;
+    }
+    
+    input {
+      border: none;
+      outline: none;
+    }
+    
+    .input-wrapper {
+      position: relative;
+    }
+    
+    .input-wrapper input:focus::placeholder {
+      opacity: 0;
+    }
+    
+    .input-wrapper input::placeholder {
+      opacity: 1;
+      transition: opacity 0.2s ease;
+    }
+    .v1_62 {
+  margin-left: 400px; 
+}
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <div class="v1_56">
+    <a href="/home1" class="v1_57">HOMELY</a>
+    <div class="v1_58"></div>
+    <div class="v1_59"></div>
+    <div class="v1_62">
+      <div class="v1_63">
+        <div class="v1_64"></div>
+        <a href="javascript:void(0)" onclick="submitLoginForm()" class="v1_65">LOGIN</a>
+      </div>
+      <span class="v1_66">Login to Homely</span>
+      <form id="loginForm" method="POST" action="/signin/">
+        {% csrf_token %}
+        <div class="v1_67 input-wrapper">
+          <div class="v1_68"></div>
+          <input type="email" name="email" class="v1_69" placeholder="Email" required />
+        </div>
+        <div class="v1_70 input-wrapper">
+          <div class="v1_71"></div>
+          <input type="password" name="password" class="v1_72" placeholder="Password" required />
+        </div>
+        <span class="v1_73">Forgot Password?</span>
+        <button type="submit" style="display: none;"></button>
+      </form>
+      <a href="/signuppage" class="v1_74">Sign Up</a>
+      <span class="v48_185">Don’t have an account?</span>
+      <span class="v1_75">Or Login With</span>
+      <div class="v1_76"></div>
+      <div class="v1_77">
+    
+      </div>
+      <div class="v1_81">
+        
+      </div>
+      <div class="v1_85">
+        
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
