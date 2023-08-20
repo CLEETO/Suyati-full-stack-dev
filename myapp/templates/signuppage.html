@@ -1,0 +1,84 @@
+  <!DOCTYPE html>
+  <script>
+    function submitSignupForm() {
+      var form = document.getElementById('signupForm');
+      
+      form.submit();
+    }
+  </script>
+
+  <html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link href="/static/signup.css" rel="stylesheet" />
+    <style>
+      a {
+        text-decoration: none;
+      }
+      
+      input {
+        border: none;
+        outline: none;
+      }
+      
+      .input-wrapper {
+        position: relative;
+      }
+      
+      .input-wrapper input:focus::placeholder {
+        opacity: 0;
+      }
+      
+      .input-wrapper input::placeholder {
+        opacity: 1;
+        transition: opacity 0.2s ease;
+      }
+    </style>
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <div class="v1_89">
+      <a href="/home1" class="v1_90">HOMELY</a>
+      <div class="v1_91"></div>
+      <div class="v1_92"></div>
+      <div class="v1_95">
+        <form id="signupForm" method="POST" action="/signup/">
+          {% csrf_token %}
+          <span class="v1_96">Sign up to Homely</span>
+          <div class="v1_97">
+            <div class="v1_98"></div>
+            <a href="javascript:void(0)" onclick="submitSignupForm()" class="v1_99">Sign up</a>
+          </div>
+          <div class="v1_100">
+            <div class="v1_101"></div>
+            <input type="email" class="v1_102" name="email" placeholder="Email" required>
+          </div>
+          <div class="v1_103">
+            <div class="v1_104"></div>
+            <input type="text" class="v1_105" name="phone_number" placeholder="Phone Number" required>
+          </div>
+          <div class="v1_106">
+            <div class="v1_107"></div>
+            <input type="text" class="v1_108" name="first_name" placeholder="First Name" required>
+          </div>
+          <div class="v1_109">
+            <div class="v1_110"></div>
+            <input type="text" class="v1_111" name="last_name" placeholder="Last Name" required>
+          </div>
+          <div class="v1_112">
+            <div class="v1_113"></div>
+            <input type="password" class="v1_114" name="password" placeholder="Enter Password" required>
+          </div>
+          <div class="v1_115">
+            <div class="v1_116"></div>
+            <input type="password" class="v1_117"name="confirm_password" placeholder="Re-enter Password" required>
+          </div>
+          <button type="submit" style="display: none;"></button>
+
+        </form>
+        <a href="/loginpage" class="v1_118">Log in</a>
+        <span class="v48_188">Have an account? </span>
+      </div>
+    </div>
+  </body>
+  </html>
